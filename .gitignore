@@ -3,3 +3,5 @@
 *.csv
 *.pkl
 __pycache__/
+*.zip
+.pytest_cache/
