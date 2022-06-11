@@ -1,0 +1,38 @@
+name: Testing API
+on:
+  push:
+    branches:
+    - main
+# These permissions are needed to interact with GitHub's OIDC Token endpoint.
+permissions:
+  id-token: write
+  contents: read 
+jobs:
+  testing-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checout the repo
+        uses: actions/checkout@v2
+
+      - name: Creating and activating virtual env
+        run: |
+          pip3 install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+
+      - name: Installing dependencies
+        run: |
+          pip install dvc[s3]
+          pip install -r requirements_test.txt
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::143108597168:role/github-actions-role-mlops
+      
+      - name: Test API
+        run: |
+          dvc pull model/model.pkl -r s3-model-tracker
+          pytest test.py

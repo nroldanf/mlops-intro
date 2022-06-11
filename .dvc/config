@@ -3,4 +3,4 @@
     profile = nicolas-devops
 ['remote "s3-model-tracker"']
     url = s3://dvc-remote-testing/model/
-    profile = nicolas-devops
+    profile = default
