@@ -31,6 +31,7 @@ jobs:
         with:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::143108597168:role/github-actions-role-mlops
+          
       
       - name: Test API
         run: |
