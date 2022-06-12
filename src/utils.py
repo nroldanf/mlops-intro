@@ -10,13 +10,13 @@ def update_model(model: Pipeline) -> None:
     
 def save_simple_metrics_report(train_score: float, test_score: float, validation_score: float, model: Pipeline) -> None:
     with open("report.txt", "w") as report_file:
-        report_file.write("# Model Pipeline Description")
+        report_file.write("# Model Pipeline Description" + "\n")
         for key, value in model.named_steps.items():
             report_file.write(f"### {key}: {value.__repr__()}" + "\n")
             
-        report_file.write(f"## Train score: {train_score}" + "\n")
-        report_file.write(f"## Test score: {test_score}" + "\n")
-        report_file.write(f"## Validation score: {validation_score}" + "\n")
+        report_file.write(f"### Train score: {train_score}" + "\n")
+        report_file.write(f"### Test score: {test_score}" + "\n")
+        report_file.write(f"### Validation score: {validation_score}" + "\n")
         
 def get_model_performance(y_real: pd.Series, y_pred: pd.Series) -> None:
     fig, ax = plt.subplots()
