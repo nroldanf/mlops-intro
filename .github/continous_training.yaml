@@ -1,5 +1,8 @@
 name: Continous Training
 on:
+  push:
+    branches:
+      - continous-training-workflow
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispath:
