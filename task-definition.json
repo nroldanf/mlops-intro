@@ -1,0 +1,51 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:143108597168:task-definition/mlops-fastapi:1",
+    "containerDefinitions": [
+        {
+            "name": "test",
+            "image": "143108597168.dkr.ecr.us-east-1.amazonaws.com/mlops-platzi:1818f06418ba46c05ae750abae11061021799ac7",
+            "cpu": 0,
+            "memoryReservation": 1024,
+            "portMappings": [
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "udp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "family": "mlops-fastapi",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "2048",
+    "memory": "5120",
+    "registeredAt": "2022-06-11T22:32:48.383000-05:00",
+    "registeredBy": "arn:aws:iam::143108597168:user/nicolas-devops"
+}
