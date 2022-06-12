@@ -14,7 +14,8 @@ on:
 # These permissions are needed to interact with GitHub's OIDC Token endpoint.
 permissions:
   id-token: write
-  contents: read 
+  contents: read
+  pull-requests: write
 jobs:
   continuous-training:
     runs-on: ubuntu-latest
