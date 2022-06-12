@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checout the repo
+      - name: Checkout the repo
         uses: actions/checkout@v2
 
       - name: Creating and activating virtual env
