@@ -15,4 +15,4 @@ RUN chmod +x initializer.sh
 
 EXPOSE 8000
 
-ENTRYPOINT [ "./inititalizer.sh" ]
+ENTRYPOINT [ "./initializer.sh" ]
