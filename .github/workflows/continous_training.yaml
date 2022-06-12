@@ -43,10 +43,12 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add model/model.pkl.dvc
           git commit -m "Updating model serialization"
-        uses: ad-m/github-push-action@master
+      
+      - uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+
       - name: Publish metrics
         uses: iterative/setup-cml@v1
         env:
