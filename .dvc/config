@@ -1,5 +1,5 @@
 ['remote "s3-remote"']
     url = s3://dvc-remote-testing/dataset/
-    profile = nicolas-devops
+    # profile = nicolas-devops
 ['remote "s3-model-tracker"']
     url = s3://dvc-remote-testing/model/
