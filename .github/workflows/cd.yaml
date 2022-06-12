@@ -20,6 +20,11 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::143108597168:role/github-actions-role-mlops     
 
+      - name: Set up environment and bring model from S3
+        run: |
+          pip3 install dvc[s3]
+          dvc pull model/model.pkl -r s3-model-tracker
+
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
