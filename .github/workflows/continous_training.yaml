@@ -5,7 +5,7 @@ on:
       - continous-training-workflow
   schedule:
     - cron: '0 */6 * * *'
-  workflow_dispath:
+  workflow_dispatch:
     inputs:
       reason:
         description: Why to run this?
