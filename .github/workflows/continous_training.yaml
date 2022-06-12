@@ -34,7 +34,7 @@ jobs:
           dvc unprotect model/model.pkl
           dvc repro -f
           echo "Training completed."
-          dvc add model/model.pkl.dvc -r s3-model-tracker --to-remote
+          dvc add model/model.pkl -r s3-model-tracker --to-remote
           dvc push model/model.pkl.dvc -r s3-model-tracker
       
       - name: Commit dvc file changes
@@ -50,7 +50,7 @@ jobs:
           branch: ${{ github.ref }}
 
       - uses: iterative/setup-cml@v1
-      
+
       - name: Publish metrics
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
